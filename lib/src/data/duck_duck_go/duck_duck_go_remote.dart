@@ -30,7 +30,7 @@ class DuckDuckGoRemoteAPI extends DuckDuckGoAPI {
       case CharactersListVariant.theWire:
         localPath = "?q=the+wire+characters&format=json";
       default:
-        localPath = "?q=simpsons+characters&format=json";
+        localPath = "?q=star+trek+characters&format=json";
     }
 
     try {

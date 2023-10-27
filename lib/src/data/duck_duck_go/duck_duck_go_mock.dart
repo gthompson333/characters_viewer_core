@@ -27,7 +27,7 @@ class DuckDuckGoMockAPI extends DuckDuckGoAPI {
       case CharactersListVariant.theWire:
         fileName = "the_wire_mock_data.json";
       default:
-        fileName = "the_simpsons_mock_data.json";
+        fileName = "star_trek_mock_data.json";
     }
 
     final String response = await rootBundle.loadString('mock_data/$fileName');

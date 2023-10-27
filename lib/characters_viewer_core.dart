@@ -4,7 +4,8 @@ export 'src/ui/screens/characters_list_screen.dart' show CharactersListScreen;
 
 enum CharactersListVariant {
   theSimpsons,
-  theWire
+  theWire,
+  starTrek
 }
 
 final charactersListVariant = CharactersListVariant.theSimpsons;

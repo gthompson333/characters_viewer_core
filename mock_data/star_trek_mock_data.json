@@ -1,0 +1,109 @@
+{
+  "Abstract": "",
+  "AbstractSource": "Wikipedia",
+  "AbstractText": "",
+  "AbstractURL": "https://en.wikipedia.org/wiki/Star_Trek_characters",
+  "Answer": "",
+  "AnswerType": "",
+  "Definition": "",
+  "DefinitionSource": "",
+  "DefinitionURL": "",
+  "Entity": "",
+  "Heading": "Star Trek characters",
+  "Image": "",
+  "ImageHeight": 0,
+  "ImageIsLogo": 0,
+  "ImageWidth": 0,
+  "Infobox": "",
+  "Redirect": "",
+  "RelatedTopics": [
+    {
+      "FirstURL": "https://duckduckgo.com/Brad_Boimler",
+      "Icon": {
+        "Height": "",
+        "URL": "",
+        "Width": ""
+      },
+      "Result": "<a href=\"https://duckduckgo.com/Brad_Boimler\">Brad Boimler</a><br>Bradward \"Brad\" Boimler is a fictional character from the American science fiction television series Star Trek: Lower Decks.",
+      "Text": "Brad Boimler - Bradward \"Brad\" Boimler is a fictional character from the American science fiction television series Star Trek: Lower Decks."
+    },
+    {
+      "FirstURL": "https://duckduckgo.com/Redshirt_(stock_character)",
+      "Icon": {
+        "Height": "",
+        "URL": "",
+        "Width": ""
+      },
+      "Result": "<a href=\"https://duckduckgo.com/Redshirt_(stock_character)\">Redshirt (stock character)</a><br>A \"redshirt\" is a stock character in fiction who dies soon after being introduced. The term originates from the original Star Trek television series in which the red-shirted security personnel frequently die during episodes.",
+      "Text": "Redshirt (stock character) - A \"redshirt\" is a stock character in fiction who dies soon after being introduced. The term originates from the original Star Trek television series in which the red-shirted security personnel frequently die during episodes."
+    },
+    {
+      "FirstURL": "https://duckduckgo.com/Star_Trek_crossovers",
+      "Icon": {
+        "Height": "",
+        "URL": "",
+        "Width": ""
+      },
+      "Result": "<a href=\"https://duckduckgo.com/Star_Trek_crossovers\">Star Trek crossovers</a><br>Several characters within the Star Trek franchise, primary and secondary, often made crossover appearances between one series and another.",
+      "Text": "Star Trek crossovers - Several characters within the Star Trek franchise, primary and secondary, often made crossover appearances between one series and another."
+    }
+  ],
+  "Results": [],
+  "Type": "C",
+  "meta": {
+    "attribution": null,
+    "blockgroup": null,
+    "created_date": null,
+    "description": "Wikipedia",
+    "designer": null,
+    "dev_date": null,
+    "dev_milestone": "live",
+    "developer": [
+      {
+        "name": "DDG Team",
+        "type": "ddg",
+        "url": "http://www.duckduckhack.com"
+      }
+    ],
+    "example_query": "nikola tesla",
+    "id": "wikipedia_fathead",
+    "is_stackexchange": null,
+    "js_callback_name": "wikipedia",
+    "live_date": null,
+    "maintainer": {
+      "github": "duckduckgo"
+    },
+    "name": "Wikipedia",
+    "perl_module": "DDG::Fathead::Wikipedia",
+    "producer": null,
+    "production_state": "online",
+    "repo": "fathead",
+    "signal_from": "wikipedia_fathead",
+    "src_domain": "en.wikipedia.org",
+    "src_id": 1,
+    "src_name": "Wikipedia",
+    "src_options": {
+      "directory": "",
+      "is_fanon": 0,
+      "is_mediawiki": 1,
+      "is_wikipedia": 1,
+      "language": "en",
+      "min_abstract_length": "20",
+      "skip_abstract": 0,
+      "skip_abstract_paren": 0,
+      "skip_end": "0",
+      "skip_icon": 0,
+      "skip_image_name": 0,
+      "skip_qr": "",
+      "source_skip": "",
+      "src_info": ""
+    },
+    "src_url": null,
+    "status": "live",
+    "tab": "About",
+    "topic": [
+      "productivity"
+    ],
+    "unsafe": 0
+  }
+}

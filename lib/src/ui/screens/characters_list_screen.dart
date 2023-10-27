@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../business/view_models/characters_list_view_model.dart';
-import '../characters_viewer_theme.dart';
 import 'character_detail_screen.dart';
 
 class CharactersListScreen extends StatefulWidget {
@@ -26,7 +25,7 @@ class CharactersListScreenState extends State<CharactersListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Characters"),
+        title: Text(_charactersListViewModel.title),
       ),
       body: _buildListView(_charactersListViewModel),
     );
@@ -50,7 +49,7 @@ class CharactersListScreenState extends State<CharactersListScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => CharacterDetail(character),
+                      builder: (context) => CharacterDetail(character: character),
                     ),
                   );
                 },
@@ -65,10 +64,8 @@ class CharactersListScreenState extends State<CharactersListScreen> {
   Widget _characterListItem(
       CharacterViewModel character, BuildContext context) {
     return Card(
-      color: CharactersViewerTheme.charactersLightBlue,
       child: ListTile(
-        title:
-            Text(character.name, style: Theme.of(context).textTheme.bodyLarge),
+        title: Text(character.name),
       ),
     );
   }
