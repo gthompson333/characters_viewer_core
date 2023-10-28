@@ -8,7 +8,6 @@ class CharacterDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('Image URL: ${character.imageURL}');
     return Scaffold(
       appBar: AppBar(
         title: Text(character.name),

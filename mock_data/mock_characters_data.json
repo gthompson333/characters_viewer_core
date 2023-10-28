@@ -1,0 +1,149 @@
+{
+  "Abstract": "",
+  "AbstractSource": "Wikipedia",
+  "AbstractText": "",
+  "AbstractURL": "https://en.wikipedia.org/wiki/Battlestar_Galactica_characters",
+  "Answer": "",
+  "AnswerType": "",
+  "Definition": "",
+  "DefinitionSource": "",
+  "DefinitionURL": "",
+  "Entity": "",
+  "Heading": "Battlestar Galactica characters",
+  "Image": "",
+  "ImageHeight": 0,
+  "ImageIsLogo": 0,
+  "ImageWidth": 0,
+  "Infobox": "",
+  "Redirect": "",
+  "RelatedTopics": [
+    {
+      "FirstURL": "https://duckduckgo.com/Adama_(Battlestar_Galactica)",
+      "Icon": {
+        "Height": "",
+        "URL": "",
+        "Width": ""
+      },
+      "Result": "<a href=\"https://duckduckgo.com/Adama_(Battlestar_Galactica)\">Adama (Battlestar Galactica)</a><br>Adama is the family name of several fictional characters in the Battlestar Galactica sci-fi universe. In the Original Continuity: \u2022 Commander Adama, initially a member of the Council and then President of the Colonies and Commander of the Battlestar Galactica.",
+      "Text": "Adama (Battlestar Galactica) - Adama is the family name of several fictional characters in the Battlestar Galactica sci-fi universe. In the Original Continuity: \u2022 Commander Adama, initially a member of the Council and then President of the Colonies and Commander of the Battlestar Galactica."
+    },
+    {
+      "FirstURL": "https://duckduckgo.com/Apollo_(Battlestar_Galactica)",
+      "Icon": {
+        "Height": "",
+        "URL": "",
+        "Width": ""
+      },
+      "Result": "<a href=\"https://duckduckgo.com/Apollo_(Battlestar_Galactica)\">Apollo (Battlestar Galactica)</a><br>Apollo is the name of two characters in the Battlestar Galactica universe...",
+      "Text": "Apollo (Battlestar Galactica) - Apollo is the name of two characters in the Battlestar Galactica universe..."
+    },
+    {
+      "FirstURL": "https://duckduckgo.com/Athena_(Battlestar_Galactica)",
+      "Icon": {
+        "Height": "",
+        "URL": "",
+        "Width": ""
+      },
+      "Result": "<a href=\"https://duckduckgo.com/Athena_(Battlestar_Galactica)\">Athena (Battlestar Galactica)</a><br>Athena is the name of several characters in the fictional Battlestar Galactica universe.",
+      "Text": "Athena (Battlestar Galactica) - Athena is the name of several characters in the fictional Battlestar Galactica universe."
+    },
+    {
+      "FirstURL": "https://duckduckgo.com/Baltar_(Battlestar_Galactica)",
+      "Icon": {
+        "Height": "",
+        "URL": "/i/e54f1935.jpg",
+        "Width": ""
+      },
+      "Result": "<a href=\"https://duckduckgo.com/Baltar_(Battlestar_Galactica)\">Baltar (Battlestar Galactica)</a><br>Baltar is a fictional character in the Battlestar Galactica universe who betrays the human race, through willing treachery in the original 1978 series, and as the inadvertent result of arrogance and self-interest in the 2003 miniseries and following TV series.",
+      "Text": "Baltar (Battlestar Galactica) - Baltar is a fictional character in the Battlestar Galactica universe who betrays the human race, through willing treachery in the original 1978 series, and as the inadvertent result of arrogance and self-interest in the 2003 miniseries and following TV series."
+    },
+    {
+      "FirstURL": "https://duckduckgo.com/Cain_(Battlestar_Galactica)",
+      "Icon": {
+        "Height": "",
+        "URL": "",
+        "Width": ""
+      },
+      "Result": "<a href=\"https://duckduckgo.com/Cain_(Battlestar_Galactica)\">Cain (Battlestar Galactica)</a><br>Cain is the name of a character in the original and new continuities of Battlestar Galactica.",
+      "Text": "Cain (Battlestar Galactica) - Cain is the name of a character in the original and new continuities of Battlestar Galactica."
+    },
+    {
+      "FirstURL": "https://duckduckgo.com/Cylon_(Battlestar_Galactica)",
+      "Icon": {
+        "Height": "",
+        "URL": "/i/b66a09b9.png",
+        "Width": ""
+      },
+      "Result": "<a href=\"https://duckduckgo.com/Cylon_(Battlestar_Galactica)\">Cylon (Battlestar Galactica)</a><br>The Cylons are the main antagonists of the human race in the Battlestar Galactica science fiction franchise, making appearances in the original 1978 series, the 1980 series, the 2004 re-imagining, and the spin-off prequel series Caprica.",
+      "Text": "Cylon (Battlestar Galactica) - The Cylons are the main antagonists of the human race in the Battlestar Galactica science fiction franchise, making appearances in the original 1978 series, the 1980 series, the 2004 re-imagining, and the spin-off prequel series Caprica."
+    },
+    {
+      "FirstURL": "https://duckduckgo.com/Cylons",
+      "Icon": {
+        "Height": "",
+        "URL": "",
+        "Width": ""
+      },
+      "Result": "<a href=\"https://duckduckgo.com/Cylons\">Cylons</a><br>The Cylons are the main antagonists of the human race in the Battlestar Galactica science fiction franchise, making appearances in the original 1978 series, the 1980 series, the 2004 re-imagining, and the spin-off prequel series Caprica.",
+      "Text": "Cylons - The Cylons are the main antagonists of the human race in the Battlestar Galactica science fiction franchise, making appearances in the original 1978 series, the 1980 series, the 2004 re-imagining, and the spin-off prequel series Caprica."
+    }
+  ],
+  "Results": [],
+  "Type": "C",
+  "meta": {
+    "attribution": null,
+    "blockgroup": null,
+    "created_date": null,
+    "description": "Wikipedia",
+    "designer": null,
+    "dev_date": null,
+    "dev_milestone": "live",
+    "developer": [
+      {
+        "name": "DDG Team",
+        "type": "ddg",
+        "url": "http://www.duckduckhack.com"
+      }
+    ],
+    "example_query": "nikola tesla",
+    "id": "wikipedia_fathead",
+    "is_stackexchange": null,
+    "js_callback_name": "wikipedia",
+    "live_date": null,
+    "maintainer": {
+      "github": "duckduckgo"
+    },
+    "name": "Wikipedia",
+    "perl_module": "DDG::Fathead::Wikipedia",
+    "producer": null,
+    "production_state": "online",
+    "repo": "fathead",
+    "signal_from": "wikipedia_fathead",
+    "src_domain": "en.wikipedia.org",
+    "src_id": 1,
+    "src_name": "Wikipedia",
+    "src_options": {
+      "directory": "",
+      "is_fanon": 0,
+      "is_mediawiki": 1,
+      "is_wikipedia": 1,
+      "language": "en",
+      "min_abstract_length": "20",
+      "skip_abstract": 0,
+      "skip_abstract_paren": 0,
+      "skip_end": "0",
+      "skip_icon": 0,
+      "skip_image_name": 0,
+      "skip_qr": "",
+      "source_skip": "",
+      "src_info": ""
+    },
+    "src_url": null,
+    "status": "live",
+    "tab": "About",
+    "topic": [
+      "productivity"
+    ],
+    "unsafe": 0
+  }
+}

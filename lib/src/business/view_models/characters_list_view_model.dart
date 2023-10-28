@@ -14,14 +14,30 @@ class CharactersListViewModel extends ChangeNotifier {
   final DuckDuckGoAPI _duckDuckGoAPI =
       charactersListUseMockData ? DuckDuckGoMockAPI() : DuckDuckGoRemoteAPI();
 
+  final List<CharacterViewModel> _allCharacters = [];
+
   // A list of character view model objects suitable for presentation in the UI.
-  List<CharacterViewModel> _characters = [];
+  List<CharacterViewModel> charactersToDisplay = [];
 
   /// Network error message. Non-null if an error is present.
   String? errorMessage;
 
-  /// Publicly accessible list of characters.
-  List<CharacterViewModel> get characters => _characters;
+  void searchCharacters({String query = ''}) async {
+    if (query.isEmpty) {
+      charactersToDisplay = List.from(_allCharacters);
+    } else {
+      // Search character collection for characters whose title or description contains
+      // the search query text.
+      charactersToDisplay = _allCharacters
+          .where((character) =>
+              character.name.contains(query) ||
+              character.description.contains(query))
+          .toList();
+    }
+
+    // Notify UI that a new character collection is available.
+    notifyListeners();
+  }
 
   void fetchCharacters() async {
     errorMessage = null;
@@ -31,12 +47,12 @@ class CharactersListViewModel extends ChangeNotifier {
       title = fetchedCharacters.value.heading;
 
       // We have characters. Clear out the old ones.
-      _characters = [];
+      _allCharacters.clear();
 
       // Map the raw data characters to character view models.
       for (final character in fetchedCharacters.value.characters) {
         final characterNameDescription = character.text.split('-');
-        _characters.add(CharacterViewModel(
+        _allCharacters.add(CharacterViewModel(
             name: characterNameDescription[0],
             imageURL: character.iconURL.isNotEmpty
                 ? '${DuckDuckGoRemoteBase.imageBaseURL}${character.iconURL}'
@@ -47,7 +63,9 @@ class CharactersListViewModel extends ChangeNotifier {
       errorMessage = _charactersFetchErrorMessage;
     }
 
-    // Notify UI that new characters are available.
+    charactersToDisplay = List.from(_allCharacters);
+
+    // Notify UI that a new character collection is available.
     notifyListeners();
   }
 }

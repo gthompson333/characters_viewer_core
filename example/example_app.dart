@@ -14,7 +14,7 @@ class ExampleApp extends StatelessWidget {
         title: 'Example App Characters Viewer',
         theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blueGrey),
         ),
         home: CharactersListScreen());
   }

@@ -1,7 +1,5 @@
 import 'dart:async';
 import 'package:flutter/services.dart';
-
-import '../../../characters_viewer_core.dart';
 import '../network_utils/network_response_states.dart';
 import 'duck_duck_go_api.dart';
 import '../models/characters_list.dart';
@@ -18,19 +16,8 @@ class DuckDuckGoMockAPI extends DuckDuckGoAPI {
 
   @override
   Future<NetworkResult> fetchCharacters() async {
-    String fileName;
+    final String response = await rootBundle.loadString('mock_data/mock_characters_data.json');
 
-    // Switch on the global variant variable set by the user of this package.
-    switch (charactersListVariant) {
-      case CharactersListVariant.theSimpsons:
-        fileName = "the_simpsons_mock_data.json";
-      case CharactersListVariant.theWire:
-        fileName = "the_wire_mock_data.json";
-      default:
-        fileName = "star_trek_mock_data.json";
-    }
-
-    final String response = await rootBundle.loadString('mock_data/$fileName');
     if (DuckDuckGoAPI.successStatusCode == 200) {
       return NetworkResult<CharactersList>.success(
           CharactersList.fromRawJson(response));
