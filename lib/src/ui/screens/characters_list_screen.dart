@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../business/view_models/characters_list_view_model.dart';
-import 'character_detail_screen.dart';
 
 class CharactersListScreen extends StatefulWidget {
-  const CharactersListScreen({super.key});
+  CharactersListScreen(
+      {super.key,
+      required this.characterSelectedCallback,
+      this.characterSelected});
+
+  final ValueChanged<CharacterViewModel> characterSelectedCallback;
+  final CharacterViewModel? characterSelected;
 
   @override
   CharactersListScreenState createState() => CharactersListScreenState();
@@ -74,30 +79,18 @@ class CharactersListScreenState extends State<CharactersListScreen> {
               return InkWell(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: _characterListItem(character, context),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          CharacterDetail(character: character),
+                  child: Card(
+                    child: ListTile(
+                      title: Text(character.name),
+                      onTap: () => widget.characterSelectedCallback(character),
+                      selected: widget.characterSelected == character,
                     ),
-                  );
-                },
+                  ),
+                ),
               );
             },
           );
         },
-      ),
-    );
-  }
-
-  Widget _characterListItem(
-      CharacterViewModel character, BuildContext context) {
-    return Card(
-      child: ListTile(
-        title: Text(character.name),
       ),
     );
   }
