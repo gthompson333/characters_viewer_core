@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import '../../../characters_viewer_core.dart';
 import '../../data/duck_duck_go/duck_duck_go_api.dart';
 import '../../data/duck_duck_go/duck_duck_go_base.dart';
 import '../../data/duck_duck_go/duck_duck_go_mock.dart';
@@ -9,10 +8,11 @@ import '../../data/network_utils/network_response_states.dart';
 class CharactersListViewModel extends ChangeNotifier {
   static const _charactersFetchErrorMessage = "Characters data not available";
   String title = "";
+  static bool useMockData = false;
 
   // Fetch either mock data or real remote data, based on global boolean.
   final DuckDuckGoAPI _duckDuckGoAPI =
-      charactersListUseMockData ? DuckDuckGoMockAPI() : DuckDuckGoRemoteAPI();
+  useMockData ? DuckDuckGoMockAPI() : DuckDuckGoRemoteAPI();
 
   final List<CharacterViewModel> _allCharacters = [];
 
@@ -30,8 +30,8 @@ class CharactersListViewModel extends ChangeNotifier {
       // the search query text.
       charactersToDisplay = _allCharacters
           .where((character) =>
-              character.name.contains(query) ||
-              character.description.contains(query))
+      character.name.contains(query) ||
+          character.description.contains(query))
           .toList();
     }
 
@@ -52,12 +52,16 @@ class CharactersListViewModel extends ChangeNotifier {
       // Map the raw data characters to character view models.
       for (final character in fetchedCharacters.value.characters) {
         final characterNameDescription = character.text.split('-');
-        _allCharacters.add(CharacterViewModel(
-            name: characterNameDescription[0],
-            imageURL: character.iconURL.isNotEmpty
-                ? '${DuckDuckGoRemoteBase.imageBaseURL}${character.iconURL}'
-                : '',
-            description: characterNameDescription[1]));
+
+        // Make an assumption that each character will have both a name and description.
+        if (characterNameDescription.length > 1) {
+          _allCharacters.add(CharacterViewModel(
+              name: characterNameDescription[0],
+              imageURL: character.iconURL.isNotEmpty
+                  ? '${DuckDuckGoRemoteBase.imageBaseURL}${character.iconURL}'
+                  : '',
+              description: characterNameDescription[1]));
+        }
       }
     } else if (fetchedCharacters is ErrorState) {
       errorMessage = _charactersFetchErrorMessage;
@@ -75,8 +79,7 @@ class CharacterViewModel {
   late final String imageURL;
   late final String description;
 
-  CharacterViewModel(
-      {required this.name,
-      this.imageURL = '',
-      this.description = "No description available."});
+  CharacterViewModel({required this.name,
+    this.imageURL = '',
+    this.description = ''});
 }

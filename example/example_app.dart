@@ -16,6 +16,8 @@ class ExampleApp extends StatelessWidget {
           useMaterial3: true,
           colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blueGrey),
         ),
-        home: CharactersListScreen());
+        home: launchCharacterViewer(
+            charactersPath: '"?q=star+trek+characters&format=json"',
+            useMockData: true));
   }
 }

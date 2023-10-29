@@ -29,6 +29,7 @@ class CharactersListScreenState extends State<CharactersListScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Text(_charactersListViewModel.title),
+          foregroundColor: Colors.black,
           backgroundColor: Theme.of(context).colorScheme.primary,
         ),
         body: Container(

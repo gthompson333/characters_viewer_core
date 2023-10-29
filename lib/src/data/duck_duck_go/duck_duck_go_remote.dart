@@ -2,8 +2,6 @@ import 'dart:async';
 import 'package:http/http.dart';
 import 'duck_duck_go_base.dart';
 import 'duck_duck_go_api.dart';
-
-import '../../../characters_viewer_core.dart';
 import '../network_utils/network_response_states.dart';
 import '../network_utils/network_utils.dart';
 import '../models/characters_list.dart';
@@ -17,26 +15,22 @@ class DuckDuckGoRemoteAPI extends DuckDuckGoAPI {
       DuckDuckGoRemoteAPI._privateConstructor();
 
   factory DuckDuckGoRemoteAPI() => _sharedInstance;
+
+  // Callers use this creator method to instantiate the Duck Duck Go remote
+  // API object and must provide a Duck Duck Go URL path.
+  static createDuckDuckGoRemoteAPI({required String charactersPath}) {
+    _sharedInstance.charactersPath = charactersPath;
+  }
+
   final DuckDuckGoRemoteBase _client = DuckDuckGoRemoteBase(Client());
+  late final String charactersPath;
 
   @override
   Future<NetworkResult> fetchCharacters() async {
-    String localPath;
-
-    // Switch on the global variant variable set by the user of this package.
-    switch (charactersListVariant) {
-      case CharactersListVariant.theSimpsons:
-        localPath = "?q=simpsons+characters&format=json";
-      case CharactersListVariant.theWire:
-        localPath = "?q=the+wire+characters&format=json";
-      default:
-        localPath = "?q=star+trek+characters&format=json";
-    }
-
     try {
       final response = await _client.request(
           action: RequestAction.get,
-          path: localPath );
+          path: charactersPath );
 
       // If network request is successful.
       // TODO: Might want to handle other 2xx status codes also.
