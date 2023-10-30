@@ -2,32 +2,45 @@ import 'package:flutter/material.dart';
 import '../../business/view_models/characters_list_view_model.dart';
 
 class CharacterDetail extends StatelessWidget {
-  CharacterDetail(
-      {super.key, required this.character});
+  CharacterDetail({super.key, required this.character});
 
   final CharacterViewModel? character;
 
   @override
   Widget build(BuildContext context) {
-    final content = Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
-        Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Image.network(character?.imageURL ?? ''),
-        ),
-        const SizedBox(height: 16),
-        Text(character?.description ?? '')
-      ],
-    );
+    final characterImageProvider = character?.imageURL != null
+        ? NetworkImage((character?.imageURL)!)
+        : AssetImage('images/character_placeholder.png');
 
     return Scaffold(
       appBar: AppBar(
         title: Text(character?.name ?? 'No Character selected'),
       ),
       body: Container(
-        padding: const EdgeInsets.all(16.0),
-        child: content,
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        child: ListView(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: FadeInImage(
+                image: characterImageProvider as ImageProvider,
+                placeholder: AssetImage('images/character_placeholder.png'),
+                width: 200,
+                height: 200,
+                /*child: Image.network(
+                character?.imageURL ?? '',
+                width: 200,
+                height: 200,
+              ),*/
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              character?.description ?? 'No character description available.',
+              softWrap: true,
+            )
+          ],
+        ),
       ),
     );
   }

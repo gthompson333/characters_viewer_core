@@ -29,8 +29,7 @@ class DuckDuckGoRemoteAPI extends DuckDuckGoAPI {
   Future<NetworkResult> fetchCharacters() async {
     try {
       final response = await _client.request(
-          action: RequestAction.get,
-          path: charactersPath );
+          action: RequestAction.get, path: charactersPath);
 
       // If network request is successful.
       // TODO: Might want to handle other 2xx status codes also.

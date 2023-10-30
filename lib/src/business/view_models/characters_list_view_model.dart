@@ -59,7 +59,7 @@ class CharactersListViewModel extends ChangeNotifier {
               name: characterNameDescription[0],
               imageURL: character.iconURL.isNotEmpty
                   ? '${DuckDuckGoRemoteBase.imageBaseURL}${character.iconURL}'
-                  : '',
+                  : null,
               description: characterNameDescription[1]));
         }
       }
@@ -76,10 +76,10 @@ class CharactersListViewModel extends ChangeNotifier {
 
 class CharacterViewModel {
   late final String name;
-  late final String imageURL;
+  final String? imageURL;
   late final String description;
 
   CharacterViewModel({required this.name,
-    this.imageURL = '',
+    this.imageURL,
     this.description = ''});
 }
