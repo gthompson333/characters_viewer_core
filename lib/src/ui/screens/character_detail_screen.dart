@@ -10,7 +10,8 @@ class CharacterDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     final characterImageProvider = character?.imageURL != null
         ? NetworkImage((character?.imageURL)!)
-        : AssetImage('images/character_placeholder.png');
+        : AssetImage(
+            'images/character_placeholder.png');
 
     return Scaffold(
       appBar: AppBar(
@@ -24,7 +25,8 @@ class CharacterDetail extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: FadeInImage(
                 image: characterImageProvider as ImageProvider,
-                placeholder: AssetImage('images/character_placeholder.png'),
+                placeholder: AssetImage(
+                    'images/character_placeholder.png'),
                 width: 200,
                 height: 200,
                 /*child: Image.network(
