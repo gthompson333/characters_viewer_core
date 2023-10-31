@@ -17,7 +17,7 @@ class ExampleApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blueGrey),
         ),
         home: launchCharacterViewer(
-            charactersPath: '"?q=star+trek+characters&format=json"',
+            charactersPath: '?q=simpsons+characters&format=json',
             useMockData: true));
   }
 }

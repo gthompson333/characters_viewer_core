@@ -7,6 +7,8 @@ import '../network_utils/network_utils.dart';
 import '../models/characters_list.dart';
 
 class DuckDuckGoRemoteAPI extends DuckDuckGoAPI {
+  // Private
+
   // Constructor is private to prevent outside instantiation.
   DuckDuckGoRemoteAPI._privateConstructor();
 
@@ -15,6 +17,8 @@ class DuckDuckGoRemoteAPI extends DuckDuckGoAPI {
       DuckDuckGoRemoteAPI._privateConstructor();
 
   factory DuckDuckGoRemoteAPI() => _sharedInstance;
+
+  // Public
 
   // Callers use this creator method to instantiate the Duck Duck Go remote
   // API object and must provide a Duck Duck Go URL path.

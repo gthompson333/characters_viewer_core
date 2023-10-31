@@ -29,11 +29,6 @@ class CharacterDetail extends StatelessWidget {
                     package: 'characters_viewer_core'),
                 width: 200,
                 height: 200,
-                /*child: Image.network(
-                character?.imageURL ?? '',
-                width: 200,
-                height: 200,
-              ),*/
               ),
             ),
             const SizedBox(height: 8),

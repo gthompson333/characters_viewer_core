@@ -6,25 +6,30 @@ import '../../data/duck_duck_go/duck_duck_go_remote.dart';
 import '../../data/network_utils/network_response_states.dart';
 
 class CharactersListViewModel extends ChangeNotifier {
+  // Private
   static const _charactersFetchErrorMessage = "Characters data not available";
-  String title = "";
-  static bool useMockData = false;
 
   // Fetch either mock data or real remote data, based on global boolean.
   final DuckDuckGoAPI _duckDuckGoAPI =
   useMockData ? DuckDuckGoMockAPI() : DuckDuckGoRemoteAPI();
 
+  // Used to keep a handle on the total collection of characters.
+  // Needed for the search logic.
   final List<CharacterViewModel> _allCharacters = [];
 
-  // A list of character view model objects suitable for presentation in the UI.
-  List<CharacterViewModel> charactersToDisplay = [];
+  // Public
+  String title = "";
+  static bool useMockData = false;
 
-  /// Network error message. Non-null if an error is present.
+  // Network error message. Non-null if an error is present.
   String? errorMessage;
+
+  // The characters that will show in the UI.
+  List<CharacterViewModel> charactersToDisplay = [];
 
   void searchCharacters({String query = ''}) async {
     if (query.isEmpty) {
-      charactersToDisplay = List.from(_allCharacters);
+      charactersToDisplay = _allCharacters;
     } else {
       // Search character collection for characters whose title or description contains
       // the search query text.
@@ -67,7 +72,7 @@ class CharactersListViewModel extends ChangeNotifier {
       errorMessage = _charactersFetchErrorMessage;
     }
 
-    charactersToDisplay = List.from(_allCharacters);
+    charactersToDisplay = _allCharacters;
 
     // Notify UI that a new character collection is available.
     notifyListeners();

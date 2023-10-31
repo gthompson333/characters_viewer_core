@@ -2,9 +2,11 @@
 import 'dart:convert';
 
 class CharactersList {
+  // Private
   static const _headingKey = 'Heading';
   static const _relatedTopicsKey = 'RelatedTopics';
 
+  // Public
   final String heading;
   final List<Character> characters;
 
@@ -21,9 +23,12 @@ class CharactersList {
 
 // Data model for a single character.
 class Character {
+  // Private
   static const _iconKey = 'Icon';
   static const _iconURLKey = 'URL';
   static const _textKey = 'Text';
+
+  // Public
   late final String iconURL;
   late final String text;
 
