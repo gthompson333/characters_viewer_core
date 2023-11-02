@@ -26,13 +26,13 @@ class DuckDuckGoRemoteAPI extends DuckDuckGoAPI {
     _sharedInstance.charactersPath = charactersPath;
   }
 
-  final DuckDuckGoRemoteBase _client = DuckDuckGoRemoteBase(Client());
+  DuckDuckGoRemoteBase remoteBase = DuckDuckGoRemoteBase(Client());
   late final String charactersPath;
 
   @override
   Future<NetworkResult> fetchCharacters() async {
     try {
-      final response = await _client.request(
+      final response = await remoteBase.request(
           action: RequestAction.get, path: charactersPath);
 
       // If network request is successful.

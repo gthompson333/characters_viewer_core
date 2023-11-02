@@ -19,13 +19,14 @@ class DuckDuckGoMockAPI extends DuckDuckGoAPI {
 
   @override
   Future<NetworkResult> fetchCharacters() async {
-    final String response = await rootBundle.loadString('mock_data/mock_characters_data.json');
+    try {
+      final String response =
+          await rootBundle.loadString('mock_data/mock_characters_data.json');
 
-    if (DuckDuckGoAPI.successStatusCode == 200) {
       return NetworkResult<CharactersList>.success(
           CharactersList.fromRawJson(response));
-    } else {
-      return NetworkResult.error(DuckDuckGoAPI.getCharactersErrorMessage);
+    } catch (error) {
+      return NetworkResult.error(DuckDuckGoAPI.getCharactersThrownErrorMessage);
     }
   }
 }
