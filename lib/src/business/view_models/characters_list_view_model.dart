@@ -28,6 +28,7 @@ class CharactersListViewModel extends ChangeNotifier {
   List<CharacterViewModel> charactersToDisplay = [];
 
   void searchCharacters({String query = ''}) async {
+    print('Searching characters with query term: $query.');
     if (query.isEmpty) {
       charactersToDisplay = _allCharacters;
     } else {
@@ -39,12 +40,14 @@ class CharactersListViewModel extends ChangeNotifier {
           character.description.contains(query))
           .toList();
     }
+    print('${charactersToDisplay.length} characters found.');
 
     // Notify UI that a new character collection is available.
     notifyListeners();
   }
 
   void fetchCharacters() async {
+    print('Fetching characters.');
     errorMessage = null;
     final fetchedCharacters = await _duckDuckGoAPI.fetchCharacters();
 
@@ -73,6 +76,7 @@ class CharactersListViewModel extends ChangeNotifier {
     }
 
     charactersToDisplay = _allCharacters;
+    print('${charactersToDisplay.length} characters fetched.');
 
     // Notify UI that a new character collection is available.
     notifyListeners();
