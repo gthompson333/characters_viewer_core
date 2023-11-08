@@ -5,30 +5,36 @@ import '../../data/duck_duck_go/duck_duck_go_mock.dart';
 import '../../data/duck_duck_go/duck_duck_go_remote.dart';
 import '../../data/network_utils/network_response_states.dart';
 
+/// Model class that represents a list of characters
+/// and is appropriate for rendering in a UI.
+/// This class extends 'Provider' ChangeNotifier and notifies any listeners
+/// upon any change of data.
 class CharactersListViewModel extends ChangeNotifier {
-  // Private
+  // Private members
   static const _charactersFetchErrorMessage = "Characters data not available";
 
   // Fetch either mock data or real remote data, based on global boolean.
   final DuckDuckGoAPI _duckDuckGoAPI =
-  useMockData ? DuckDuckGoMockAPI() : DuckDuckGoRemoteAPI();
+      useMockData ? DuckDuckGoMockAPI() : DuckDuckGoRemoteAPI();
 
   // Used to keep a handle on the total collection of characters.
   // Needed for the search logic.
   final List<CharacterViewModel> _allCharacters = [];
 
-  // Public
+  /// Public members
   String title = "";
   static bool useMockData = false;
 
-  // Network error message. Non-null if an error is present.
+  /// Network error message. Non-null if an error is present.
   String? errorMessage;
 
-  // The characters that will show in the UI.
+  /// The character model objects used to render the UI.
   List<CharacterViewModel> charactersToDisplay = [];
 
+  /// For each character model object, search for any characters that have
+  /// the query term present in the character's name property or description property.
+  /// Filter the found characters into a collection and notify the UI to rebuild itself.
   void searchCharacters({String query = ''}) async {
-    print('Searching characters with query term: $query.');
     if (query.isEmpty) {
       charactersToDisplay = _allCharacters;
     } else {
@@ -36,18 +42,19 @@ class CharactersListViewModel extends ChangeNotifier {
       // the search query text.
       charactersToDisplay = _allCharacters
           .where((character) =>
-      character.name.contains(query) ||
-          character.description.contains(query))
+              character.name.contains(query) ||
+              character.description.contains(query))
           .toList();
     }
-    print('${charactersToDisplay.length} characters found.');
 
     // Notify UI that a new character collection is available.
     notifyListeners();
   }
 
+  /// Fetch a new collection of characters.
+  /// Depending on the concrete type of _duckDuckGoAPI, either mock data will be used,
+  /// or actual remote data.
   void fetchCharacters() async {
-    print('Fetching characters.');
     errorMessage = null;
     final fetchedCharacters = await _duckDuckGoAPI.fetchCharacters();
 
@@ -76,19 +83,18 @@ class CharactersListViewModel extends ChangeNotifier {
     }
 
     charactersToDisplay = _allCharacters;
-    print('${charactersToDisplay.length} characters fetched.');
 
     // Notify UI that a new character collection is available.
     notifyListeners();
   }
 }
 
+/// Data model appropriate for rendering in a UI.
 class CharacterViewModel {
   late final String name;
   final String? imageURL;
   late final String description;
 
-  CharacterViewModel({required this.name,
-    this.imageURL,
-    this.description = ''});
+  CharacterViewModel(
+      {required this.name, this.imageURL, this.description = ''});
 }
