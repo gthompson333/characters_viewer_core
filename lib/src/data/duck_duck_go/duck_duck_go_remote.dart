@@ -27,7 +27,7 @@ class DuckDuckGoRemoteAPI extends DuckDuckGoAPI {
   }
 
   DuckDuckGoRemoteBase remoteBase = DuckDuckGoRemoteBase(Client());
-  late final String charactersPath;
+  String charactersPath = '';
 
   @override
   Future<NetworkResult> fetchCharacters() async {
