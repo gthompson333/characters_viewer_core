@@ -22,7 +22,7 @@ class CharactersListViewModel extends ChangeNotifier {
   final List<CharacterViewModel> _allCharacters = [];
 
   /// Public members
-  String title = "";
+  String title = "Mock Data";
   static bool useMockData = false;
 
   /// Network error message. Non-null if an error is present.
