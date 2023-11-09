@@ -31,9 +31,11 @@ class CharactersListScreenState extends State<CharactersListScreen> {
 
   @override
   Widget build(BuildContext context) {
+    String mockDataStr = CharactersListViewModel.useMockData ? " Mock Data" : '';
+    String titleText = _charactersListViewModel.title + mockDataStr;
     return Scaffold(
         appBar: AppBar(
-          title: Text(_charactersListViewModel.title),
+          title: Text(titleText),
           foregroundColor: Colors.black,
           backgroundColor: Theme.of(context).colorScheme.primary,
         ),
