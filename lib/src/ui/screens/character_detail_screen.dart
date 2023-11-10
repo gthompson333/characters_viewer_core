@@ -34,6 +34,7 @@ class CharacterDetail extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               character?.description ?? 'No character description available.',
+              textAlign: TextAlign.center,
               softWrap: true,
             )
           ],

@@ -18,6 +18,6 @@ class ExampleApp extends StatelessWidget {
         ),
         home: launchCharacterViewer(
             charactersPath: '?q=battlestar+galactica+characters&format=json',
-            useMockData: true));
+            useMockData: false));
   }
 }

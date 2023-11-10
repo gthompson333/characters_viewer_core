@@ -44,7 +44,7 @@ class MasterDetailContainerState extends State<MasterDetailContainer> {
           ),
         ),
         Flexible(
-          flex: 3,
+          flex: 2,
           child: CharacterDetail(
             character: _selectedCharacter,
           ),
